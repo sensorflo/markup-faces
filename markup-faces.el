@@ -270,7 +270,7 @@ LaTeX: {\\large foo}"
 	       :weight normal
 	       :width normal
 	       :foundry "unknown"))
-    (((background light)) (:foreground "gray70"))
+    (((background light)) (:foreground "gray65"))
     (((background dark)) (:foreground "gray30")))
   "Face for general meta characters and base for special meta characters.
 
@@ -301,7 +301,7 @@ easier for major mode to write font lock regular expressions."
 (define-obsolete-face-alias 'markup-hide-delimiter-face 'markup-meta-hide-face "23.1")
 (defface markup-meta-hide-face
   '((default (:inherit markup-meta-face :height 0.8))
-    (((background light)) :foreground "gray85")
+    (((background light)) :foreground "gray75")
     (((background dark)) :foreground "gray25"))
   "For meta characters which can be 'hidden'.
 
@@ -420,13 +420,10 @@ See also `markup-reference-face' and `markup-anchor-face'."
   "Faces for text that neither really fits in the literal nor the meta group"
   :group 'markup-faces)
 
-;; strike-through is not really good looking, but its mnemonic and free. And if
-;; strike-through is used at all, then probably it's most suitable for
-;; markup-replacement-face, i.e. for what else?
 (defface markup-replacement-face
   '((default (:family "Monospace"))
-    (((background light)) (:foreground "purple3" :strike-through "plum1"))
-    (((background dark)) (:foreground "plum1" :strike-through "purple3")))
+    (((background light)) (:foreground "purple3"))
+    (((background dark)) (:foreground "plum1")))
   "Meta characters that are replaced by text in the output.
 See also `markup-complex-replacement-face'.
 

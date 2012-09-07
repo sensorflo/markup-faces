@@ -39,7 +39,10 @@ As font-lock-faces, but tailored for markup languages instead
 programming languages. The sub group markup-faces-text is also
 intended for 'text viewing modes' such as info or (wo)man. This
 gives a common look and feel, or let's say theme, across different
-markup language modes and 'text viewing modes' respectively."
+markup language modes and 'text viewing modes' respectively.
+
+Set the :inherit attribute. For example set the :inherit
+attribute of info-title-1 to '(markup-title-1-face)"
   :group 'faces)
 
 ;;; group markup-faces-text 
@@ -504,6 +507,44 @@ wich of its chars are meta characters and which are literal characters."
 (defvar markup-passthrough-face 'markup-passthrough-face)
 (defvar markup-error-face 'markup-error-face)
 
+;;  1. Command `doremi-frame-height+' sets the frame height.
+;;
+;;     (define-doremi frame-height+
+;;       "Set frame height, changing it incrementally."   ; Doc string
+;;       "Set Frame Height"                        ; Command menu name
+;;       (lambda (new-val)                         ; Setter function
+;;         (set-frame-height (selected-frame) new-val) new-val)
+;;       (frame-height (selected-frame)))          ; Initial value
+;;
+;;  2. Command `doremi-set-bg+' cycles through
+;;     (x-defined-colors), setting the background color.
+;;     
+;;     (define-doremi set-bg+
+;;       ;; Doc string
+;;       "Set background color, choosing from a list of all colors."
+;;       "Set Background Color"                    ; Command menu name
+;;       ;; Setter function
+;;       (lambda (newval) (set-background-color newval) newval)
+;;       ;; Initial value
+;;       (frame-parameter (selected-frame) 'background-color)
+;;       nil                                       ; Ignored
+;;       (x-defined-colors)                        ; Cycle enumeration
+;;       t)    ; Add current color to enumeration if not there already
+;;
+(require 'doremi)
+(define-doremi markup-faces-set-meta-visibility
+  "markup-faces-set-meta-visibility"
+  "markup-faces-set-meta-visibility"
+  ;; setter
+  (lambda (newval)
+    (set-face-attribute 'markup-meta-hide-face nil
+			:foreground (concat "gray" (number-to-string newval)))
+    newval)
+  ;; initial
+  (string-to-number (substring (face-attribute 'markup-meta-hide-face :foreground) 4))
+  5)
+(set-face-attribute 'markup-meta-hide-face nil
+		    :foreground (concat "gray" (number-to-string 50)))
 (provide 'markup-faces)
 
 ;;; markukp-faces.el ends here

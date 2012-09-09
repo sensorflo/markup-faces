@@ -300,7 +300,7 @@ easier for major mode to write font lock regular expressions."
 
 (define-obsolete-face-alias 'markup-hide-delimiter-face 'markup-meta-hide-face "23.1")
 (defface markup-meta-hide-face
-  '((default (:inherit markup-meta-face :height 0.8))
+  '((default (:inherit markup-meta-face))
     (((background light)) :foreground "gray75")
     (((background dark)) :foreground "gray25"))
   "For meta characters which can be 'hidden'.

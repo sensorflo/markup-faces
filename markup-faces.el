@@ -1,6 +1,6 @@
 ;;; markup-faces.el --- collection of faces for markup language modes
 ;; 
-;; Copyright 2010-2012 Florian Kaufmann <sensorflo@gmail.com>
+;; Copyright 2010-2013 Florian Kaufmann <sensorflo@gmail.com>
 ;;
 ;; Author: Florian Kaufmann <sensorflo@gmail.com>
 ;; URL: https://github.com/sensorflo/markup-faces

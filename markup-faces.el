@@ -97,7 +97,10 @@ colors/sizes/fonts upon it."
 For example 'foo' in the following examples:
 HTML: <em>foo</em>
 LaTeX: \\emph{foo}
-AsciiDoc: 'foo'"
+AsciiDoc: 'foo'
+
+Note that in general emphasized is not equal to italic text, see
+`markup-italic-face'."
   :group 'markup-faces-text)
 
 (defface markup-strong-face
@@ -106,7 +109,10 @@ AsciiDoc: 'foo'"
 
 For example 'foo' in the following examples:
 HTML: <strong>foo</strong>
-AsciiDoc: *foo*"
+AsciiDoc: *foo*
+
+Note that in general strong is not equal bold text, see
+`markup-bold-face'."
   :group 'markup-faces-text)
 
 (defface markup-code-face

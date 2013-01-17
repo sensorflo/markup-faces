@@ -4,6 +4,7 @@
 ;;
 ;; Author: Florian Kaufmann <sensorflo@gmail.com>
 ;; URL: https://github.com/sensorflo/markup-faces
+;; Version: 1.0.0
 ;; Created: 2010
 ;; Keywords: wp faces
 ;; 
@@ -24,7 +25,11 @@
 ;; 
 ;;; Commentary:
 ;; 
-;; See `markup-faces' customization group
+;; As font-lock-faces, but tailored for markup languages instead programming
+;; languages. The sub group markup-faces-text is also intended for 'text viewing
+;; modes' such as info or (wo)man. This gives a common look and feel, or let's
+;; say theme, across different markup language modes and 'text viewing modes'
+;; respectively.
 
 ;;; Variables:
 
@@ -33,13 +38,11 @@
 ;; - within text faces, choose properties wisely so they can overlap / add on
 ;; - buffer face mode: distinguish between meta / text / text-typewriter
 (defgroup markup-faces nil
-  "Faces for markup languages.
+  "Collection of faces for markup language modes and text viewing modes.
 
-As font-lock-faces, but tailored for markup languages instead
-programming languages. The sub group markup-faces-text is also
-intended for 'text viewing modes' such as info or (wo)man. This
-gives a common look and feel, or let's say theme, across different
-markup language modes and 'text viewing modes' respectively."
+More info in the commentary section of the markup-faces library.
+You can access it by typing M-x finder-commentary RET
+markup-faces RET."
   :group 'faces)
 
 ;;; group markup-faces-text 
@@ -506,4 +509,4 @@ wich of its chars are meta characters and which are literal characters."
 
 (provide 'markup-faces)
 
-;;; markukp-faces.el ends here
+;;; markup-faces.el ends here

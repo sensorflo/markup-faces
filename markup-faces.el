@@ -274,9 +274,8 @@ LaTeX: {\\large foo}"
 	       :slant normal
 	       :weight normal
 	       :width normal
-	       :foundry "unknown"))
-    (((background light)) (:foreground "gray65"))
-    (((background dark)) (:foreground "gray30")))
+	       :foundry "unknown"
+	       :foreground "gray65")))
   "Face for general meta characters and base for special meta characters.
 
 The default sets all face properties to a value because then it's
